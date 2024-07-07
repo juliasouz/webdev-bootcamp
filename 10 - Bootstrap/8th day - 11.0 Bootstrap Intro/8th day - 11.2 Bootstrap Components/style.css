@@ -1,0 +1,13 @@
+.feature-icon{
+    border-radius: 0.75rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.navbar {
+    background: linear-gradient(to right, rgb(147, 200, 243),  rgb(31, 97, 136), rgb(13, 47, 87));
+}
+
+.navbar > div > a{
+    color: rgb(13, 47, 87);
+}
