@@ -5,7 +5,7 @@
 }
 
 .navbar {
-    background: linear-gradient(to right, rgb(147, 200, 243),  rgb(31, 97, 136), rgb(13, 47, 87));
+    background: linear-gradient(to right, #00bfff,  #ff4c68,  #ef8172);
 }
 
 .navbar > div > a{
