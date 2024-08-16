@@ -15,7 +15,7 @@ This project involves creating a responsive landing page based on a design from 
 - **JavaScript**: For interactivity and dynamic content.
 
 ## Project Structure
-
+```
 project-folder/
 │
 ├── index.html          # Main HTML file
@@ -33,3 +33,4 @@ project-folder/
 │   ├── product.png
 │
 └── README.md           
+```
