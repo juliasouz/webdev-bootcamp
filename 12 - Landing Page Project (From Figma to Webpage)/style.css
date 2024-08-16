@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Lato, sans-serif;
+  color: #54575A;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F3F8F7 49.91%, #FFF9F5 94.19%);
+}
+
+.wrapper {
+  position: relative;
+  width: 1440px;
+  height: 1379px;
+  margin: auto;
+}
+
+.brand-img{
+  width: 193px;
+  height: 47.64px;
+  top: 50.25px;
+  left: 221px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.title {
+  position: absolute;
+  width: 458px;
+  height: 135px;
+  top: 236px;
+  left: 221px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 67px;
+}
+
+.text{
+  position: absolute;
+  width: 394px;
+  height: 96px;
+  top: 403px;
+  left: 221px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.app-store-btn{
+  position: absolute;
+  width: 138.44px;
+  height: 46.28px;
+  top: 531px;
+  left: 221px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.app-store-btn img{
+  width: 138.44px;
+  height: 46.28px;
+}
+
+.google-play-btn{
+  position: absolute;
+  width: 156.19px;
+  height: 46.28px;
+  top: 531px;
+  left: 381.81px;
+  gap: 0px;
+  opacity: 0px;  
+}
+.google-play-btn img{
+  width: 156.19px;
+  height: 46.28px;
+}
+
+.main-image-container{
+  position: absolute;
+  width: 535.72px;
+  height: 309.27px;
+  top: 229.73px;
+  left: 683.28px;
+  padding: 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.main-image-container img{
+  width: 411.15px;
+}
+
+.profile-img{
+  position: absolute;
+  height: 470px;
+  top: 686px;
+  left: 737px;
+}
+
+.orders-img{
+  position: absolute;
+  height: 470px;
+  top: 913px;
+  left: 479px;
+}
+
+.home-img{
+  position: absolute;
+  height: 470px;
+  top: 908px;
+  left: 995px;
+}
+
+.cart-img{
+  position: absolute;
+  height: 222px;
+  top: 1157px;
+  left: 221px;
+}
+
+.product-img{
+  position: absolute;
+  height: 222px;
+  top: 1157px;
+  left: 737px;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #54575A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top i {
+  font-size: 24px;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+
+.fade-in.active {
+  opacity: 1;
+}
