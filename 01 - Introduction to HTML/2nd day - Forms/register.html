@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <form action="register.php" method="GET">
+        <label for="firstname">First name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+        <label for="lastname">Last name:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" required><br><br>
+        <label for="gender">Gender:</label><br>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="female">Female<br>
+        <input type="radio" name="gender" value="other">Other<br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="6" required><br><br>
+        <label for="pets">Pets:</label><br>
+        <input type="checkbox" name="pets" value="cat">Cat<br>
+        <input type="checkbox" name="pets" value="dog">Dog<br><br>
+        <label for="cars">Cars:</label><br>
+        <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select><br><br>
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
