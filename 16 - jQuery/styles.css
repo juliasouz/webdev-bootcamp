@@ -8,12 +8,14 @@ body{
     height: 100vh;
     margin: 0;
 }
-h1{
+.h-styling{
+    color: #9850f5;
     text-align: center;
     padding: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 24px;
+    background: linear-gradient(to right, #ff1165, #9820ff);
 }
 
 .btn-button {
@@ -38,4 +40,27 @@ h1{
 .btn-button:active {
     background-color: #ff79c6;
     transform: translateY(0);
+}
+
+.container {
+    border: 1px solid #ff1165;
+    border-radius: 10px;
+    margin: 5px;
+    width: 400px;
+}
+
+#box {
+    background: #ff79c6;
+    height: 50px;
+    width: 1px;
+    border: 1px solid #ff1165;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+#demo {
+    color: ivory;
+    margin: 10px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
