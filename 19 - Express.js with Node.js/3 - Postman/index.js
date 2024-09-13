@@ -1,9 +1,19 @@
 import express from "express";
+import fs from "fs";
+import path from "path";
+
 const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("<h1>Home Page</h1>");
+  const filePath = path.join(__dirname, "index.html");
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      res.status(500).send("Error reading the HTML file");
+      return;
+    }
+    res.send(data);
+  });
 });
 
 app.post("/register", (req, res) => {
