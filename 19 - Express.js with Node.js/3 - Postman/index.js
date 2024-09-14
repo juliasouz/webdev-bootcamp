@@ -31,7 +31,6 @@ app.patch("/user/julia", (req, res) => {
 });
 
 app.delete("/user/julia", (req, res) => {
-  //Deleting
   res.sendStatus(200);
 });
 

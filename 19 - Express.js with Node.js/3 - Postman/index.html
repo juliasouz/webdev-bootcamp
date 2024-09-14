@@ -6,28 +6,93 @@
     <title>Home Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background: linear-gradient(45deg, #4c74af, #df68ad);
             color: #fff;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
+            font-size: 2rem;
+            letter-spacing: 1px;
         }
         main {
             padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - 100px); /* Garantir que o main ocupe espaço adequado */
+        }
+        main p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .card {
+            background-color: #fff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            font-size: 1.8rem;
+            margin: 1rem 0;
+            color: #4c74af;
+        }
+        .card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .card .price {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        .card .btn {
+            background: linear-gradient(45deg, #4c74af, #df68ad);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .card .btn:hover {
+            background-color: #45a049;
         }
         footer {
-            background-color: #333;
+            background: linear-gradient(45deg, #4c74af, #df68ad);
             color: #fff;
             text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            margin-top: 2rem; /* Espaçamento extra acima do footer */
+        }
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -36,7 +101,27 @@
         <h1>Welcome to Our Company</h1>
     </header>
     <main>
-        <p>This is the home page of our Express application.</p>
+        <p>This is the home page of our Express application. Check out our featured products below:</p>
+        <div class="card-container">
+            <div class="card">
+                <h2>Eco-Friendly Water Bottle</h2>
+                <p>Stay hydrated with our reusable, BPA-free water bottle. Perfect for home, office, or on the go.</p>
+                <div class="price">$15.99</div>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="card">
+                <h2>Wireless Headphones</h2>
+                <p>Experience immersive sound with our noise-cancelling, wireless headphones. Great for music and calls.</p>
+                <div class="price">$89.99</div>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="card">
+                <h2>Smart Fitness Watch</h2>
+                <p>Track your fitness and stay connected with our sleek, feature-packed smart watch. Monitors heart rate, steps, and more.</p>
+                <div class="price">$199.99 <span style="color: red; font-size: 0.9rem;">(20% off!)</span></div>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
     </main>
     <footer>
         <p>© 2024 Our Company. All rights reserved.</p>
