@@ -10,6 +10,7 @@
   "author": "Julia Souza",
   "license": "ISC",
   "dependencies": {
+    "3.2-http-requests": "file:",
     "express": "^5.0.0"
   },
   "description": ""
