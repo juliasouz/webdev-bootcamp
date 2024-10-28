@@ -1,21 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Name Letters</title>
-  </head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 300ms, transform 300ms;
+        }
+        .error-shake {
+            animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+    </style>
+</head>
 
-  <body>
-    <% if (locals.numberOfLetters) { %>
-    <h1>There are <%= numberOfLetters %> letters in your name.</h1>
-    <% } else { %>
-    <h1>Enter your name below 👇</h1>
-    <% } %>
-    <form action="/submit" method="POST">
-      <input type="text" name="fName" placeholder="First name" />
-      <input type="text" name="lName" placeholder="Last name" />
-      <input type="submit" value="OK" />
-    </form>
-  </body>
+<body class="min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center p-6 font-['Inter']"
+      x-data="{ 
+        loading: false,
+        success: false,
+        error: false,
+        stats: null,
+        async submitForm(e) {
+            e.preventDefault();
+            this.loading = true;
+            this.error = false;
+            
+            const formData = new FormData(e.target);
+            try {
+                const res = await fetch('/api/calculate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        fName: formData.get('fName'),
+                        lName: formData.get('lName')
+                    })
+                });
+                
+                if (!res.ok) throw new Error('Validation failed');
+                
+                this.stats = await res.json();
+                this.success = true;
+            } catch (err) {
+                this.error = true;
+                this.stats = null;
+            } finally {
+                this.loading = false;
+            }
+        }
+      }">
+
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 space-y-6">
+        <!-- Error Alert -->
+        <div x-show="error" 
+             x-transition 
+             class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative error-shake" 
+             role="alert">
+            <strong class="font-bold">Error!</strong>
+            <span class="block sm:inline">Please check your input and try again.</span>
+        </div>
+
+        <template x-if="success && stats">
+            <div class="space-y-6 fade-enter fade-enter-active">
+                <div class="text-center">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Results</h1>
+                    <div class="space-y-2">
+                        <p class="text-xl text-gray-600">
+                            Your name contains 
+                            <span class="font-bold text-purple-600" x-text="stats.numberOfLetters"></span> 
+                            letters
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            First name: <span class="font-medium" x-text="stats.firstNameLength"></span> letters<br>
+                            Last name: <span class="font-medium" x-text="stats.lastNameLength"></span> letters
+                        </p>
+                    </div>
+                </div>
+                
+                <button 
+                    @click="success = false; stats = null" 
+                    class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
+                    Calculate Another Name
+                </button>
+            </div>
+        </template>
+
+        <!-- Input Form -->
+        <template x-if="!success">
+            <div class="space-y-6">
+                <div class="text-center">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Welcome!</h1>
+                    <p class="text-gray-600">Please enter your name below</p>
+                </div>
+
+                <form @submit="submitForm" class="space-y-4">
+                    <div class="space-y-4">
+                        <div>
+                            <input 
+                                type="text" 
+                                name="fName" 
+                                placeholder="First name" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
+                                :class="{ 'border-red-500': error }"
+                                required
+                                pattern="[A-Za-z\s-']+"
+                                maxlength="50"
+                            />
+                        </div>
+                        <div>
+                            <input 
+                                type="text" 
+                                name="lName" 
+                                placeholder="Last name" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
+                                :class="{ 'border-red-500': error }"
+                                required
+                                pattern="[A-Za-z\s-']+"
+                                maxlength="50"
+                            />
+                        </div>
+                    </div>
+                    
+                    <button 
+                        type="submit"
+                        class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:opacity-50"
+                        :disabled="loading">
+                        <span x-show="!loading">Calculate Letters</span>
+                        <span x-show="loading" class="flex items-center justify-center">
+                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Processing...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </template>
+    </div>
+</body>
 </html>
