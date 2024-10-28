@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
     items: ["apple", "banana", "cherry"],
     htmlContent: "<em>This is some em text</em>",
   };
-  res.render("solution.ejs", data);
+  res.render("index.ejs", data);
 });
 
 app.listen(port, () => {
