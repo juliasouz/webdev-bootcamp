@@ -1,0 +1,56 @@
+body {
+  background: linear-gradient(135deg, #6a0dad, #3333cc);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, 'Segoe UI',
+    'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
+  color: #e080fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  font-size: 1rem;
+  background: #6a0dad;
+  padding: 1rem 2rem;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px; /* Aqui está o arredondamento */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+input:hover {
+  background: #3333cc;
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  width: 100%;
+  color: #aaa;
+  font-size: 0.8rem;
+}
