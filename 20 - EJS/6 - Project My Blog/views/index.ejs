@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1 class="fascinate-inline-regular">Julia's Blog</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/posts/new">Create a New Post</a>
+    </nav>
+  </header>
+  <main>
+    <ul>
+      <% posts.forEach(post => { %>
+        <li>
+          <article>
+            <h2><%= post.title %></h2>
+            <p><%= post.content %></p>
+            <div class="post-actions">
+              <a href="/posts/edit/<%= post.id %>">Edit</a>
+              <form action="/posts/delete/<%= post.id %>" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+              </form>
+            </div>
+          </article>
+        </li>
+      <% }) %>
+    </ul>
+  </main>
+  <footer>
+    <p>Copyright © <%= new Date().getFullYear() %></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a New Post</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Create a New Post</h1>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+  </header>
+  <main>
+    <div class="form-container">
+      <form action="/posts" method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="content" placeholder="Content" required></textarea>
+        <button type="submit">Create</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p>Copyright © <%= new Date().getFullYear() %></p>
+  </footer>
+</body>
+</html>

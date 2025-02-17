@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Post</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Edit Post</h1>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+  </header>
+  <main>
+    <form action="/posts/edit/<%= post.id %>" method="POST">
+      <input type="text" name="title" value="<%= post.title %>" required>
+      <textarea name="content" required><%= post.content %></textarea>
+      <button type="submit">Update</button>
+    </form>
+  </main>
+  <footer>
+    <p>Copyright © <%= new Date().getFullYear() %></p>
+  </footer>
+</body>
+</html>

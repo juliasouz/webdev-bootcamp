@@ -1,0 +1,181 @@
+body {
+    background: linear-gradient(135deg, #6a0dad, #3333cc);
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    margin: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tangerine-regular {
+    font-family: "Tangerine", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .tangerine-bold {
+    font-family: "Tangerine", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .fascinate-inline-regular {
+    font-family: "Fascinate Inline", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    color: w;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  header nav {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: #6a0dad;
+    transition: background 0.3s ease;
+  }
+  
+  header nav a:hover {
+    background: #3333cc;
+  }
+  
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  li {
+    margin-bottom: 2rem;
+  }
+  
+  article {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+  }
+  
+  article h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  article p {
+    margin: 0;
+  }
+  
+  .post-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .post-actions a, .post-actions form button {
+    background: #6a0dad;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .post-actions a:hover, .post-actions form button:hover {
+    background: #3333cc;
+  }
+  
+  footer {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    text-align: center;
+    border-radius: 15px;
+    margin: 1rem;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  form input, form textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    font-size: 1rem;
+    background: whitesmoke;
+    padding: 1rem;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  form button {
+    background: #6a0dad;
+    padding: 1rem 2rem;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+  }
+  
+  form button:hover {
+    background: #3333cc;
+  }
+  
+  @media (max-width: 768px) {
+    header, main, footer {
+      padding: 1rem;
+    }
+  
+    header nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header nav a {
+      margin: 0.5rem 0;
+    }
+  }
+  
