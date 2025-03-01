@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "6---project-my-blog": "file:",
     "ejs": "^3.1.10",
     "express": "^4.21.2"
   }
