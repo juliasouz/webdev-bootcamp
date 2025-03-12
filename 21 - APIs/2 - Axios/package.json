@@ -1,0 +1,32 @@
+{
+  "name": "axios-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": "",
+  "contributors": [],
+  "scripts": {
+    "dev": "",
+    "test": ""
+  },
+  "description": "",
+  "dependencies": {
+    "2-Axios": "file:",
+    "axios": "^1.5.0",
+    "axios-project": "file:",
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.18.3"
+  }
+}
