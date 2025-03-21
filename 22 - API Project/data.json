@@ -1,0 +1,12 @@
+{
+    "api": {
+        "baseUrl": "https://openlibrary.org",
+        "endpoints": {
+            "search": "/search.json",
+            "subjects": "/subjects/{subject}.json"
+        }
+    },
+    "defaultFilters": {
+        "limit": 10
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">
+            <i class="fas fa-book-reader"></i>
+            Book Recommender
+        </a>
+        <div class="navbar-right">
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <div class="search-form">
+                <h1>Find Your Next Book</h1>
+                <form action="/search" method="GET">
+                    <div class="form-group">
+                        <label for="genre">Genre:</label>
+                        <select name="genre" id="genre">
+                            <option value="">Select a genre</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="romance">Romance</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="science_fiction">Science Fiction</option>
+                            <option value="thriller">Thriller</option>
+                            <option value="horror">Horror</option>
+                            <option value="historical_fiction">Historical Fiction</option>
+                            <option value="non_fiction">Non-Fiction</option>
+                            <option value="biography">Biography</option>
+                            <option value="history">History</option>
+                            <option value="science">Science</option>
+                            <option value="philosophy">Philosophy</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">Author:</label>
+                        <input type="text" name="author" id="author" placeholder="Enter author name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Book Type:</label>
+                        <select name="type" id="type">
+                            <option value="">Select a type</option>
+                            <option value="novel">Novel</option>
+                            <option value="poetry">Poetry</option>
+                            <option value="short_story">Short Story</option>
+                            <option value="essay">Essay</option>
+                            <option value="reference">Reference</option>
+                            <option value="textbook">Textbook</option>
+                            <option value="children">Children's Book</option>
+                            <option value="young_adult">Young Adult</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                        Search Books
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+    </script>
+</body>
+</html>
