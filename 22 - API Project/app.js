@@ -1,14 +1,9 @@
 import express from "express";
 import axios from "axios";
-import fs from "fs";
 import path from "path";
 
 const app = express();
 const port = 3000;
-
-const dataPath = path.join(process.cwd(), "data.json");
-const rawData = fs.readFileSync(dataPath);
-const data = JSON.parse(rawData);
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
