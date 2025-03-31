@@ -1,7 +1,7 @@
 CREATE TABLE capitals (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50),
-    country VARCHAR(50)
+	id SERIAL PRIMARY KEY,
+	country VARCHAR(45),
+	capital VARCHAR(45)
 );
 
 CREATE TABLE flags (
