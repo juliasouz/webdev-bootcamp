@@ -9,11 +9,8 @@ body {
     height: 100vh;
 }
 
-.container {
+.heading {
     text-align: center;
-}
-
-h1 {
     font-size: 3rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
