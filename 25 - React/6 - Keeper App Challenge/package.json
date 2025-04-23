@@ -1,5 +1,5 @@
 {
-  "name": "es6-import-export-practice-completed",
+  "name": "keeper-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "es6-import-export-practice-completed": "file:",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "keeper-app": "file:",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
@@ -22,6 +22,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "vite": "^6.3.1"
+    "vite": "^6.3.2"
   }
 }
