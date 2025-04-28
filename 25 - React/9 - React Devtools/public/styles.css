@@ -1,0 +1,80 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0 auto;
+  padding: 25px;
+  max-width: 400px;
+  background-color: #FFFCF6;
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #6C8FC5;
+  margin: 20px 0 30px;
+}
+
+.card {
+  border-radius: 25px;
+  position: relative;
+  padding: 25px 15px;
+  background-color: #ffffff;
+  margin: 50px 0;
+  height: 200px;
+  box-shadow: 0 4px 10px rgba(108, 143, 197, 0.2);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(108, 143, 197, 0.4);
+}
+
+.top {
+  border-radius: 25px 25px 0 0;
+  height: 100px;
+  width: 100%;
+  background-color: #EAB2BB;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.name {
+  font-size: 2em;
+  color: #ffffff;
+  display: flex;
+  flex: 1;
+  margin: 10% 20px 0;
+}
+
+.card img {
+  margin: 30px 20px 0 0;
+}
+
+.circle-img {
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 7px solid #fff;
+  width: 120px;
+  height: 120px;
+}
+
+.bottom {
+  margin-top: 120px;
+}
+
+.info {
+  margin: 20px 0;
+  color: #6C8FC5;
+}
+
+@media (max-width: 480px) {
+  body {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
