@@ -16,21 +16,79 @@ The bootcamp provided a comprehensive exploration of full-stack web development,
 - Creating dynamic templates using **EJS**.
 - Consuming and building **RESTful APIs** for data integration.
 
-### **3️⃣ Database Management (PostgreSQL)**
-- **Using pgAdmin** to create and manage databases.
-- **Reading data** from a PostgreSQL database.
-- **Querying data** using `SELECT`, `WHERE`, and `LIKE` statements.
-- **Defining constraints** with `UNIQUE` and `NOT NULL`.
-- **Inserting and adding data** into tables.
-- **Updating and deleting data**, ensuring efficient data management.
-- **Travel Tracker Project** – mapping travel history with database integration.
-- **One-to-One Relationships** & **Inner Joins**.
-- **One-to-Many Relationships** to model real-world connections.
-- **Many-to-Many Relationships** & **Aliases** for complex queries.
-- **Family Travel Tracker Project** – a map-based feature showing visited countries per family member.
-- **Permalist Project** – tracking and managing permanent lists in PostgreSQL.
+### **3️⃣ JavaScript DOM Manipulation**
+- **Adding JavaScript to websites**.
+- **Understanding the Document Object Model (DOM)**.
+- **Selecting and manipulating HTML elements** dynamically.
+- **Separating concerns**: structure vs style vs behavior.
+- **Handling text manipulation and attributes**.
+- **Drum Kit Project** – interactive sounds triggered by events.
+- **Event Listeners** – adding interactivity to buttons.
+- **Higher-order functions** and passing functions as arguments.
+- **JavaScript objects** – methods and dot notation.
+- **Keyboard event listeners** – detecting key presses.
+- **Understanding callbacks** and responding to events.
+- **Adding animations** to websites.
 
-### **4️⃣ Authentication and Security**
+### **4️⃣ jQuery**
+- **What is jQuery?**
+- **Incorporating jQuery** into web projects.
+- **Minification** and reducing file sizes.
+- **Selecting elements** dynamically.
+- **Manipulating styles, text, and attributes**.
+- **Adding event listeners** with jQuery.
+- **Adding and removing elements** dynamically.
+- **Website animations** with jQuery.
+
+### **5️⃣ Node.js Essentials**
+- **What is Node.js?**
+- **Using Node.js** for backend development.
+- **Native Node modules** and how to utilize them.
+- **npm package manager** – installing external modules.
+- **QR Code Generator Project**.
+
+### **6️⃣ Express.js with Node.js**
+- **What is Express.js?**
+- **Creating servers** with Express.
+- **Handling HTTP requests** (`GET`, `POST`, `PUT`, `DELETE`).
+- **Using Postman** for API testing.
+- **Introduction to middlewares**.
+- **Building custom middlewares**.
+
+### **7️⃣ EJS (Embedded JavaScript Templates)**
+- **What is EJS?** and its role in dynamic rendering.
+- **EJS Tags** – syntax and structure.
+- **Passing data to EJS templates**.
+- **Using EJS Partials and Layouts** for reusable components.
+- **Band Generator Project** – using EJS for dynamic content generation.
+
+### **8️⃣ API Development**
+- **Introduction to APIs** and their structure.
+- **Understanding JSON** format.
+- **Making server-side API requests** using Axios.
+- **API Authentication** methods.
+- **REST APIs** and their principles.
+- **Secrets Project** – handling sensitive information securely.
+- **Building custom APIs**:
+  - Creating `GET` routes.
+  - Creating `POST`, `PUT`, and `PATCH` routes.
+  - Creating the `DELETE` route.
+  - **Blog API Project** – developing a RESTful API for managing blog posts.
+
+### **9️⃣ Database Management (PostgreSQL & SQL)**
+- **Using pgAdmin** to create and manage databases.
+- **SQL Commands:**  
+  - `CREATE TABLE` and inserting data  
+  - `READ`, `SELECT`, and `WHERE` queries  
+  - **Updating single values** and adding columns  
+  - **Deleting records and tables**  
+- Understanding **SQL relationships, foreign keys, and inner joins**.
+- **Projects:**  
+  - Travel Tracker (mapping travel history with database integration).  
+  - Family Travel Tracker (visualizing travel history with colored country markers).  
+  - Permalist (tracking and managing permanent lists in PostgreSQL).  
+
+### **🔟 Authentication and Security**
 - **Registering users** with email and password authentication.
 - **Encryption and hashing**, including password **salting** with **bcrypt** for improved security.
 - Understanding **how password hacking works** and how to protect against vulnerabilities.
@@ -40,68 +98,34 @@ The bootcamp provided a comprehensive exploration of full-stack web development,
 
 ## 📂 Folder Structure
 
-The repository is organized into folders by topic or project:
+The repository is organized into directories based on the covered topics:
 
 ### **Frontend**
 - **`HTML and CSS`** → Exercises and projects focused on HTML, CSS, and responsive design.
 - **`JavaScript`** → Challenges involving DOM manipulation and interactive logic.
 - **`React`** → React-based exercises and projects.
-  - *Topics Covered:*  
-    - **JSX and Babel**  
-    - **JS expressions in JSX** and ES6 template literals  
-    - **JSX attributes** and styling React elements  
-    - **Inline styling** for React elements  
-    - **React styling practice**  
-    - **React components** and reusable structures  
-    - **JS ES6 Import, Export, and Modules**  
-    - **React Props** and component communication  
-    - **React DevTools** for debugging  
-    - **Mapping data to components**  
-    - **JS ES6 Map, Filter, Reduce, and Arrow Functions**  
-    - **Conditional rendering** with the ternary operator & AND operator  
-    - **React state management** – Declarative vs imperative programming  
-    - **React Hooks – useState**  
-    - **JS ES6 Object & Array Destructuring**  
-    - **Event handling in React**  
-    - **React forms** and controlled inputs  
-    - **Class components vs functional components**  
-    - **Managing complex state** in React applications  
-    - **JS ES6 Spread Operator** for state updates  
-    - **Managing component tree structure**  
-    - **Keeper App Project (Notes application)**  
-    - **React dependencies & styling**
 
 ### **Backend**
 - **`Node.js`** → Backend development with Node.js and Express.js.
-- **`EJS`** → Dynamic templates using EJS.
+- **`Express.js`** → Server-side projects.
+- **`EJS`** → Templating exercises and projects.
 
 ### **Database**
-- **`PostgreSQL`** → SQL scripts and database management projects.
+- **`PostgreSQL and SQL`** → SQL scripts and projects on database management.
+
+### **APIs**
+- **`API Development`** → API projects and authentication exercises.
 
 ### **Authentication and Security**
-- **`Authentication and Security`** → Exercises and projects on authentication and security.
+- **`Authentication and Security`** → Password hashing, OAuth, and data protection.
 
 ## 🌟 Project Highlights
 
-### **🔹 Landing Page Project**
-- Converted a **Figma design** into a fully responsive web page.
-- Applied best practices in CSS and semantic HTML.
-
-### **🔹 Band Name Generator**
-- A **Node.js** and **Express.js** application that generates band names.
-- Integrated user input handling through HTML forms.
-
-### **🔹 Blog API Project**
-- Built a **RESTful API** to manage blog posts.
-- Implemented **CRUD operations** using Express.js.
-
-### **🔹 Family Travel Tracker Project**
-- Created a **PostgreSQL-powered travel tracker**, mapping countries visited by family members.
-- Integrated **database relationships** and complex queries for real-time data visualization.
-
-### **🔹 Keeper App Project**
-- Developed a **React-based notes application**, inspired by Google Keep.
-- Managed state efficiently and structured the component tree.
+- **Drum Kit Project** – interactive music project using JavaScript.
+- **Keeper App Project** – a **React-based note-taking application**.
+- **Blog API Project** – RESTful API for blog posts.
+- **Family Travel Tracker** – dynamic visualization of travel history.
+- **Band Generator Project** – EJS-powered band name generator.
 
 ## 🛠️ Technologies Used
 
