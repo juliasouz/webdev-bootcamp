@@ -1,5 +1,5 @@
 {
-  "name": "usestate-hook-practice",
+  "name": "vite-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "usestate-hook-practice": "file:"
+    "vite-react": "file:"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
