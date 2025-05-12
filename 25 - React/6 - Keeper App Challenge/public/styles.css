@@ -11,6 +11,9 @@ html {
 body {
   background: linear-gradient(135deg, #fafaf5, #FFFCF6);
   padding: 0 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -28,18 +31,19 @@ header h1 {
   color: #ffffff;
 }
 
-footer {
-  position: absolute;
-  text-align: center;
-  padding: 10px 0;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-footer p {
-  font-size: 0.9rem;
-  color: #888;
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
 }
 
 .note {
@@ -48,9 +52,11 @@ footer p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 16px;
   width: 260px;
-  margin: 16px;
-  float: left;
+  margin: 0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .note:hover {
@@ -70,4 +76,119 @@ footer p {
   color: #555;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+form {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 16px 60px 32px 16px;
+  margin: 24px auto 0 auto;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form input,
+form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background: none;
+  resize: none;
+  padding: 8px 0;
+  width: 100%;
+}
+
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note button {
+  position: static;
+  margin-top: 16px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+  display: block;
+}
+
+.note button:hover,
+.note button:focus {
+  background: #e1a20a;
+}
+
+footer {
+  position: static;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 32px;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media (max-width: 800px) {
+  .notes-container {
+    gap: 8px;
+  }
+  .note {
+    width: 90vw;
+    max-width: 350px;
+  }
+  form {
+    max-width: 98vw;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+  .note {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 12px;
+  }
+  form {
+    padding: 12px 48px 32px 8px;
+  }
+  form button {
+    right: 8px;
+  }
 }
