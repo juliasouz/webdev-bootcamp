@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 40% 25% at 80% 15%, #fffbe7cc 0%, #f6d36555 80%, transparent 100%),
+    radial-gradient(ellipse 35% 20% at 20% 85%, #fda08577 0%, #fffbe7aa 70%, transparent 100%),
+    radial-gradient(ellipse 25% 15% at 60% 80%, #f6d36555 0%, transparent 100%),
+    linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Caveat", cursive;
+  color: #22223b;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  animation: paperMove 18s linear infinite alternate;
+}
+
+@keyframes paperMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 60px; }
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: #fffbe7;
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.12),
+    0 2px 8px #f6d36544,
+    inset 0 2px 16px #f6d36522;
+  border-radius: 32px 28px 36px 24px/28px 32px 24px 36px;
+  padding: 2.2rem 1.7rem;
+  border: 2.5px solid #f6d365;
+  margin: 1rem;
+  transition: box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(-1.5deg);
+  animation: containerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes containerGlow {
+  0% {
+    box-shadow:
+      0 8px 32px 0 rgba(31, 38, 135, 0.12),
+      0 2px 8px #f6d36544,
+      0 0 0 0 #f6d36555,
+      inset 0 2px 16px #f6d36522;
+  }
+  100% {
+    box-shadow:
+      0 8px 32px 0 rgba(31, 38, 135, 0.12),
+      0 2px 8px #f6d36544,
+      0 0 24px 8px #f6d36577,
+      inset 0 2px 16px #f6d36522;
+  }
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/old-mathematics.png');
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+  filter: blur(0.2px);
+}
+
+.container:hover {
+  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.18), 0 4px 16px #f6d36566;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.heading h1 {
+  font-size: 2.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #22223b;
+  background: #fffbe7;
+  padding: 0.7rem 2.2rem;
+  border-radius: 20px 18px 22px 16px/18px 20px 16px 22px;
+  box-shadow: 0 2px 8px #fdcb6e33, 0 1px 0 #f6d36555;
+  border: 1.5px dashed #fdcb6e;
+  transform: rotate(-2deg);
+}
+
+.form {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+
+.form input {
+  flex: 1 1 180px;
+  background: #fffbe7;
+  border: 1.5px dashed #fdcb6e;
+  outline: none;
+  padding: 0.85rem 1.1rem;
+  border-radius: 14px 12px 16px 10px/12px 14px 10px 16px;
+  font-size: 1.05rem;
+  color: #22223b;
+  box-shadow: 0 2px 8px #fdcb6e22;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+.form input:focus {
+  box-shadow: 0 4px 16px #fdcb6e44;
+  border: 1.5px solid #fdcb6e;
+}
+
+button {
+  background: linear-gradient(135deg, #fdcb6e 60%, #f6d365 100%);
+  color: #22223b;
+  border: 1px dashed #fdcb6e;
+  border-radius: 14px 12px 16px 10px/12px 14px 10px 16px;
+  padding: 0.85rem 1.3rem;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #fdcb6e33;
+  transition: background 0.2s, box-shadow 0.2s, border 0.2s;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 #fdcb6e;
+  opacity: 0;
+  transition: box-shadow 0.25s, opacity 0.25s;
+  pointer-events: none;
+}
+
+button:hover::after {
+  box-shadow: 0 0 20px 8px #fdcb6e;
+  opacity: 1;
+  animation: buttonPulse 1s;
+}
+
+button:active::after {
+  animation: buttonClickPulse 0.4s;
+  opacity: 1;
+}
+
+@keyframes buttonPulse {
+  0% { box-shadow: 0 0 0 0 #fdcb6e; opacity: 0.7; }
+  70% { box-shadow: 0 0 20px 8px #fdcb6e; opacity: 1; }
+  100% { box-shadow: 0 0 0 0 #fdcb6e; opacity: 0; }
+}
+
+@keyframes buttonClickPulse {
+  0% {
+    box-shadow: 0 0 0 0 #fdcb6e;
+    opacity: 1;
+  }
+  80% {
+    box-shadow: 0 0 20px 8px #fdcb6e;
+    opacity: 0.8;
+  }
+  100% {
+    box-shadow: 0 0 0 0 #fdcb6e00;
+    opacity: 0;
+  }
+}
+
+button span {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  margin-top: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+li {
+  background: #fffbe7;
+  margin-bottom: 0.7rem;
+  padding: 1rem 1.3rem;
+  border-radius: 14px 12px 16px 10px/12px 14px 10px 16px;
+  box-shadow: 0 1px 4px #fdcb6e22, 0 1px 0 #f6d36533;
+  font-size: 1.25rem;
+  text-align: left;
+  word-break: break-word;
+  border: 1.5px dashed #fdcb6e;
+  transition: background 0.2s, transform 0.3s;
+  animation: fadeInUp 0.5s;
+  position: relative;
+}
+
+li:hover {
+  background: #fdcb6e22;
+  transform: scale(1.03) rotate(-1deg);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem 0.5rem;
+    max-width: 98vw;
+  }
+  .heading h1 {
+    font-size: 1.3rem;
+    padding: 0.4rem 1rem;
+  }
+  .form {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .form input, button {
+    width: 100%;
+  }
+}
