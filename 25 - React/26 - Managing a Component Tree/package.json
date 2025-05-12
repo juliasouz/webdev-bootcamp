@@ -1,5 +1,5 @@
 {
-  "name": "es6-spread-operator-practice",
+  "name": "managing-a-component-tree",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "es6-spread-operator-practice": "file:",
+    "managing-a-component-tree": "file:",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
